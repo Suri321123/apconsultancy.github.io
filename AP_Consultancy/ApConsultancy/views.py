@@ -31,10 +31,10 @@ def index(request):
             recipient_list=['aptechnologies23@gmail.com']
             #sendMail=EmailMessage(subject,message,emto=['aptechnologies23@gmail.com'])
             #sendMail.send()
-            try:
-                send_mail( subject, message, email_from, recipient_list )
-            except:
-                return HttpResponse('Invalid Mail')
+            #try:
+            #    send_mail( subject, message, email_from, recipient_list )
+            #except:
+            #    return HttpResponse('Invalid Mail')
             form=RegisterJob()
             return redirect('index')
 
@@ -49,22 +49,14 @@ def about(request):
 
 
 def contacts(request):
-    context = RequestContext(request)
-    context_dict = {'boldmessage': "I am bold font from the context"}
     if request.method == 'POST':
-        form = ContactForm(request.POST)
+        form = RegisterJob(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            email = form.cleaned_data['email']
-            message = form.cleaned_data['message']
-            subject = "From Contact Info"
-            message = "name: " + name + "\n" + "email: " + email + "\nmessage: " + message
-            sendMail = EmailMessage(subject, message, to=['aptechnologies23@gmail.com'])
+            save_data=form.save(commit=False)
             try:
-                sendMail.send()
-            except:
-                return HttpResponse('Invalid Mail')
-            return HttpResponse(name)
+                save_data.save()
+            except IntegrityError as e:
+                return HttpResponse("already applied")
 
     else:
         form = ContactForm()

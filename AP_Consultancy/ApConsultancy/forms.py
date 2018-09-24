@@ -2,6 +2,7 @@ from django import forms
 from django.forms import ModelForm
 from django.forms import ModelChoiceField
 from .models import RegisterUser
+from .models import QueryForm
 
 class RegisterJob(ModelForm):
     class Meta:
@@ -24,9 +25,8 @@ class RegisterJob(ModelForm):
         return dob
 
 
-class ContactForm(forms.Form):
-    name = forms.CharField(label='name',
-                    widget=forms.TextInput(attrs={'placeholder': 'Your Name'}))
-    email = forms.EmailField(label='email',
-                    widget=forms.TextInput(attrs={'placeholder': 'Your E-Mail'}))
-    message = forms.CharField(widget=forms.Textarea(attrs={'placeholder': 'Write us your query','cols': 50, 'rows': 3}))
+class ContactForm(ModelForm):
+    class Meta:
+        model = QueryForm
+        fields = '__all__'
+
