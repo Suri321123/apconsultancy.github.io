@@ -1,0 +1,176 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+
+<link rel="stylesheet" href="{% static 'css/touchTouch.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<script src="{% static 'js/touchTouch.jquery.js' %}"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#dob" ).datepicker();
+  } );
+
+  $(function(){
+  $(".dobForm").datepicker({
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1900:2012",
+
+    });
+  });
+
+  </script>
+
+<script>
+  $(window).load(function(){
+    $().UItoTop({ easingType: 'easeOutQuart' });
+    $('.gallery .info').touchTouch();
+  }); 
+
+   $(document).ready(function(){
+       $(".shuffle-me").shuffleImages({
+         target: ".images > img"
+       });
+    });
+</script>
+
+
+
+</head>
+
+<body class="page1" id="top">
+  <div class="main">
+<!--==============================
+              header
+=================================-->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+          <a href="index.html">
+            <img src="{% static 'images/logoAP.png' %}" alt="Logo alt" style="width:90px;height:60px;">
+          </a>
+       
+        <div class="navigation ">
+          <nav>
+            <ul class="sf-menu">
+             <li class="current"><a href="/ApConsultancy/index/">Home</a></li>
+             <li><a href="/ApConsultancy/about/">About</a></li>
+             <li><a href="/ApConsultancy/contacts/">Contact Us</a></li>
+           </ul>
+          </nav>
+          <div class="clear"></div>
+        </div>       
+      </div>
+    </div>
+  </div>
+</header>
+<!--=====================
+          Content
+======================-->
+      <form method='POST' action=''>
+     {% csrf_token %}
+  <div class="container gallery">
+    <div class="row">
+      <div class="grid_8">
+        <div class="row">
+        <img src="{% static 'images/homeJob3.jpg' %}" alt="" style="width:1000px;height:490px;">
+        </div>
+      </div>
+
+      <div class="grid_4">
+        <h4>Register for a Job</h4>
+                  <h1>{{ form.mobile.errors }}
+                      {{form.dob.errors}}
+                  {% if form.non_field_errors %}
+      {% for error in form.non_field_errors %}
+        {{error}}
+      {% endfor %}
+{% endif %}
+                  </h1>
+        <blockquote class="bq1">
+          <table style="font-family: sans-serif;">
+          <tr>
+            <td>Full Name:</td>
+            <td>{{form.name}}</td>
+          </tr>
+
+          <tr class="blank_row">
+          </tr>
+
+          <tr>
+            <td>EmailId:</td>
+            <td>{{form.email}}</td>
+          </tr>
+
+          <tr class="blank_row">
+          </tr>
+
+          <tr>
+            <td>Mob No.:</td>
+            <td>{{form.mobile}}</td>
+          </tr>
+          <tr class="blank_row">
+          </tr>
+            <tr>
+            <td>DOB:  </td>
+            <td>
+             {{form.dob}}
+            </td>
+          </tr>
+
+          <tr class="blank_row">
+          </tr>
+            <tr>
+            <td>Job Type:</td>
+            <td>
+             {{form.job}}
+            </td>
+          </tr>
+
+          </table>
+          <center><input class="btn" type="submit" name="submit" value="submit"></center>
+
+        </blockquote>
+
+      </div>
+    </div>
+  </div>
+          </form>
+</section>
+
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12"> 
+        <div class="copyright"><a href="#" class="f_logo"><img src="{% static 'images/logo3.png' %}" alt=""
+        style="width: 150px;height: 30px;">
+           <div class="socials">
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+        </div> 
+        </div>
+      </div>
+    </div>
+
+  </div> 
+
+</footer>
+<a href="#" id="toTop" class="fa fa-chevron-up"></a>
+</div>
+
+</body>
+
+</html>
+

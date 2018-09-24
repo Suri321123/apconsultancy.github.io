@@ -1,0 +1,118 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contacts</title>
+<link rel="stylesheet" href="{% static 'css/contact-form.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" media="screen" href="{% static 'css/ie.css">
+<![endif]-->
+</head>
+
+<body>
+  <div class="main">
+<!--==============================
+              header
+=================================-->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+          <a href="index.html">
+            <img src="{% static 'images/logoAP.png' %}" alt="Logo alt" style="width:90px;height:60px;">
+          </a>
+
+        <div class="navigation ">
+          <nav>
+            <ul class="sf-menu">
+             <li><a href="/ApConsultancy/index/">Home</a></li>
+             <li><a href="/ApConsultancy/about/">About</a></li>
+             <li class="current"><a href="/ApConsultancy/contacts/">Contact Us</a></li>
+           </ul>
+          </nav>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <!--=====================
+          Content
+======================-->
+<section id="content">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+        <h4>Find Us</h4>
+        <div class="map">
+          <figure class="">
+            <iframe src="https://maps.google.com/maps?q=harda%20madhya%20pradesh&t=&z=13&ie=UTF8&iwloc=&output=embed" style="border:0"></iframe>
+          </figure>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="grid_5">
+        <h4>Contact Info</h4>
+        AP_Consultancy pvt. limited <br>
+        9870 Harda,<br>
+        Madhya Pradesh, DC 45 Fr 45.<br>
+        Telephone: +91 000000012121<br>
+        FAX: +1 800 889 9898<br>
+        E-mail: <a href="#">apPagal@gmail.com</a>
+      </div>
+      <div class="grid_6 preffix_1">
+        <h4>Contact Form</h4>
+          <form method='POST' action=''>
+                {% csrf_token %}
+          <div class="contact-form-loader"></div>
+          <fieldset>
+            <label class="name">
+              {{form.name}}
+            </label>
+           
+            <label class="email">
+              {{form.email}}
+            </label>
+           <br><br>
+            <label class="message">
+              {{form.message}}
+            </label>
+              <br>
+            <div>
+              <input class="btn" type="submit" name="send" value="Send">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12"> 
+        <div class="copyright"><a href="#" class="f_logo"><img src="{% static 'images/logo3.png' %}" alt=""
+        style="width: 150px;height: 30px;">
+           <div class="socials">
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<a href="#" id="toTop" class="fa fa-chevron-up"></a>
+</div>
+
+</body>
+
+</html>

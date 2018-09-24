@@ -1,0 +1,142 @@
+{% load static %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+  <div class="main">
+<!--==============================
+              header
+=================================-->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">
+          <a href="index.html">
+            <img src="{% static 'images/logoAP.png' %}" alt="Logo alt" style="width:90px;height:60px;">
+          </a>
+
+        <div class="navigation ">
+          <nav>
+            <ul class="sf-menu">
+             <li><a href="/ApConsultancy/index/">Home</a></li>
+             <li class="current"><a href="/ApConsultancy/about/">About</a></li>
+             <li><a href="/ApConsultancy/contacts/">Contact Us</a></li>
+           </ul>
+          </nav>
+          <div class="clear"></div>
+        </div>       
+      </div>
+    </div>
+  </div>
+</header>
+<!--=====================
+          Content
+======================-->
+<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - July 14, 2014!</div>
+  <div class="container">
+    <div class="row">
+      <div class="grid_9">
+        <h4>About Our Agency</h4>
+        <div class="row">
+          <div class="grid_8">
+            <img src="{% static 'images/page2_img.jpg" alt="" class="img_inner fleft">
+            <div class="extra_wrapper">
+              <p class="text1 offset__1">Our agency had provided this and that etc....Our agency had provided this and that etc....
+              Our agency had provided this and that etc....
+              Our agency had provided this and that etc....
+              Our agency had provided this and that etc....
+              Our agency had provided this and that etc....
+              Our agency had provided this and that etc....
+              Our agency had provided this and that etc....
+              Our agency had provided this and that etc....
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <h4 class="head__1">Our Work Team</h4>
+        <div class="row">
+            <div class="grid_3">
+            <div class="block2">
+              <div class="maxheight">
+                <img src="{% static 'images/AP_Pic.jpg' %}" alt="" class="img_inner" style="width:650px;height:270px;">
+                <div class="color2">-Aadarsh Pagare</div>
+                <em class="italic">Mizoram University, Computer Science</em>
+                  <em class="italic">CEO, AP_Consultancy</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid_3">
+            <div class="block2">
+              <div class="maxheight">
+                <img src="{% static 'images/suri123.jpg' %}" alt="" class="img_inner">
+                <div class="color2">-Surendra Meena</div>
+                <em class="italic">IIT Roorkee Computer Science</em>
+                  <em class="italic">CTO, AP_Consultancy</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid_3">
+        <h4>Who We Are</h4>
+        <ul class="list">
+          <li>
+            <div class="count">1</div>
+            <div class="extra_wrapper">
+           Our agency had provided this and that etc....Our agency had provided this and that etc....
+              Our agency had provided this and that etc.... </div>
+          </li>
+          <li>
+            <div class="count">2</div>
+            <div class="extra_wrapper">
+            <div class="extra_wrapper">
+           Our agency had provided this and that etc....Our agency had provided this and that etc....
+              Our agency had provided this and that etc.... </div>
+          </li>
+          <li>
+            <div class="count">3</div>
+            <div class="extra_wrapper">
+           Our agency had provided this and that etc....Our agency had provided this and that etc....
+              Our agency had provided this and that etc.... </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--==============================
+              footer
+=================================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12"> 
+        <div class="copyright"><a href="#" class="f_logo"><img src="{% static 'images/logo3.png' %}" alt=""
+        style="width: 150px;height: 30px;">
+           <div class="socials">
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<a href="#" id="toTop" class="fa fa-chevron-up"></a>
+</div>
+
+</body>
+
+</html>
